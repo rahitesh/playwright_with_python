@@ -9,4 +9,6 @@ class Landing_Page:
     def click_on_signUp(self):
         self.page.wait_for_load_state("domcontentloaded")
         self.signUpBtn.click()
+
+    
     
