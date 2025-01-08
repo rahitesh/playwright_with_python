@@ -1,11 +1,11 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 class Login_Page:
     def __init__(self, page:Page):
         self.page = page
         self.new_user_signup_text = page.get_by_text("New User Signup!")
         self.signup_name = page.get_by_role("textbox", name="Name")
-        self.signUp_email_Address = page.get_by_role("textbox", name="Email Address")
+        self.signUp_email_Address = page.locator("//*[@data-qa='signup-email']")
         self.signUp_Btn = page.get_by_role("button", name="Signup")
 
         
@@ -20,5 +20,8 @@ class Login_Page:
     def click_on_signUp_btn(self):
         self.signUp_Btn.click()
         self.page.wait_for_load_state("domcontentloaded")
+    
+    def validate_new_user_signup_text_is_visible(self):
+        expect(self.new_user_signup_text).to_be_visible()
 
     
