@@ -1,0 +1,8 @@
+tests/__pycache__/
+pages/__pycache__/
+videos/
+__pycache__
+.pytest_cache
+screenshot/
+ .DS_Store
+
