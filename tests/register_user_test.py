@@ -7,7 +7,7 @@ from pages.signup_page import Signup_page
 from pages.account_created_page import Account_Created_Page
 from pages.delete_account_page import Delete_Account_Page
 
-def test_user_registration_process(page:Page):
+def test_user_registration_process(page: Page):
     landing_page = Landing_Page(page)
     login_page = Login_Page(page)
     signup_page = Signup_page(page)
@@ -23,7 +23,7 @@ def test_user_registration_process(page:Page):
 
     login_page.validate_new_user_signup_text_is_visible()
     login_page.enter_name("Ramesh")
-    login_page.enter_email_addr("ramesh11@gmgail.com")
+    login_page.enter_email_addr("ramesh111@gmgail.com")
     login_page.click_on_signUp_btn()
 
     page.wait_for_load_state("domcontentloaded")
